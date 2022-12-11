@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-func fibonacci() fibGen {
+func fibonacci2() fibGen {
 	var a, b = 0, 1
 	return func() int {
 		a, b = b, a+b
@@ -27,7 +27,7 @@ func (f fibGen) Read(p []byte) (n int, err error) {
 }
 
 func main() {
-	scanner := bufio.NewScanner(fibonacci())
+	scanner := bufio.NewScanner(fibonacci2())
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
